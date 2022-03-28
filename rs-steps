@@ -1,0 +1,7 @@
+mongod --port 27018 --replSet rs0 --logpath="C:\data\rs1\1.log" --dbpath="C:\data\rs1"
+mongod --port 27019 --replSet rs0 --logpath="C:\data\rs2\2.log" --dbpath="C:\data\rs2"
+mongod --port 27020 --replSet rs0 --logpath="C:\data\rs3\3.log" --dbpath="C:\data\rs3"
+rs.status()
+rs.initiate()
+show dbs
+rs.add("localhost:27020")

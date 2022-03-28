@@ -5,3 +5,9 @@ rs.status()
 rs.initiate()
 show dbs
 rs.add("localhost:27020")
+show dbs
+use test
+db.createCollection("users")
+db.users.insert({"name": "chandan"})
+show dbs on 3rd one
+rs.secondaryOk() on 2nd or 3 rd

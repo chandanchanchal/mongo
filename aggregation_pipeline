@@ -16,3 +16,20 @@ db.orders.insertMany( [
    { _id: 7, name: "Vegan", size: "medium", price: 18,
      quantity: 10, date : ISODate( "2021-01-13T05:10:13Z" ) }
 ] )
+
+
+
+
+db.orders.aggregate( [
+
+   
+   {
+      $match: { size: "medium" }
+   },
+
+   
+   {
+      $group: { _id: "$name", totalQuantity: { $sum: "$quantity" } }
+   }
+
+] )
